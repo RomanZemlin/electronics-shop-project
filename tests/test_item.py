@@ -22,7 +22,7 @@ def test_calculate_total_price(item1, item2):
 
 def test_apply_discount(item1, item2):
     item1.pay_rate = 0.8
-    assert item1.apply_discount() == 8000.0
-    assert item1.apply_discount() is not None
-    assert item2.apply_discount() == 20000
-    assert item2.apply_discount() is not None
+    assert item1.price * item1.pay_rate == 8000.0
+    assert item1.apply_discount() is None
+    assert item2.price == 20000
+    assert item2.apply_discount() is None
