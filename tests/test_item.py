@@ -36,3 +36,13 @@ def test_normal_instantiate_from_csv():
 def test_string_to_number():
     assert item1.string_to_number("9.8") == 9
     assert item2.string_to_number("11.4") == 11
+
+
+def test_repr():
+    assert item1.__repr__() == "Item('Смартфон', 10000, 20)"
+    assert item2.__repr__() == "Item('Ноутбук', 20000, 5)"
+
+
+def test_srt():
+    assert item1.__str__() == "Смартфон"
+    assert item2.__str__() == "Ноутбук"
