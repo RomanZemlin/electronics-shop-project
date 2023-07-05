@@ -1,3 +1,5 @@
+import pytest
+
 from src.phone import Phone
 
 
@@ -17,7 +19,9 @@ def test_srt():
 
 def test_add():
     assert iphone + samsung == 25
-    assert  iphone + iphone == 40
+    assert iphone + iphone == 40
+    with pytest.raises(TypeError):
+        iphone + int(10)
 
 
 def test_number_of_sim():
@@ -28,3 +32,5 @@ def test_number_of_sim():
 def test_raad():
     assert iphone + samsung == 25
     assert iphone + iphone == 40
+    with pytest.raises(TypeError):
+        iphone + int(10)
